@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE xml>
+<Configuration status="debug" name="crm" >
+	<!-- packages="com.cremonaufficio.intranet.backend.logging" -->
+	<Appenders>
+		<RollingFile name="file" fileName="/webapps/crm/logs/application.log" filePattern="/webapps/crm/logs/application-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>%d|%t|%p|%c{1}.%M() %m%n</Pattern><!-- %X{idUtente}|%X{userName} -->
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="file"/>
+		</Root>
+	</Loggers>
+	
+</Configuration>

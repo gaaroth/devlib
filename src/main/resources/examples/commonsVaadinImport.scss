@@ -1,0 +1,332 @@
+@mixin commonsvaadinimport { 
+	
+	/*MISC*/ 
+	.wordwrap-table .v-table-cell-wrapper {
+		/* Do not specify any margins, paddings or borders here */
+		white-space:normal;
+		overflow: hidden;
+	}
+	.full-padding {
+		padding: 15px;
+	}
+	.partial-padding {
+		padding-top: 15px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+		padding-left: 1px;
+	}
+	.top-padding {
+		padding-top: 15px;
+	}
+	.bottom-padding {
+		padding-bottom: 15px;
+	}
+	.left-padding {
+		padding-left: 15px;
+	}
+	.right-padding {
+		padding-right: 15px;
+	}
+	.no-padding {
+		padding: 0px !important;
+	}
+	.full-small-padding {
+		padding: 2px;
+	}
+	.clickable-cell {
+		text-align: left !important;
+    	width: 100% !important;
+	}
+	
+	/* GRID*/
+	.v-grid-row {
+		.grid-row-filters-cell {
+			padding: 2px !important;
+		}
+		
+		.grid-row-no-padding {
+			padding: 0 10px !important;
+		}
+	
+		.v-grid-cell-green {
+			background-color: #DBFFE4;
+		}
+		.v-grid-cell-red {
+			background-color: #FFE0E0;
+		}
+		.v-grid-cell-yellow {
+			background-color: #FFFFE0;
+		}
+		.v-grid-cell-blue {
+			background-color: #CCE1FF;
+		}
+		.v-grid-cell-grey {
+			background-color: #E0E0E0;
+		}
+	}
+	
+	/* CALENDAR */
+	/*.v-calendar-event-caption | .v-calendar-event-content*/
+	.v-calendar-event {
+		font-size: 0.65em;
+		margin-right: 4px;
+		color: #000000 !important;
+		/*border: 1px solid #D4D4D4 !important;*/
+	}
+	
+	.v-calendar-event-blue-all-day {
+		background-color: #CCE1FF !important;
+		/*height: 60px !important;
+		white-space:normal;*/
+	}
+	.v-calendar-event-blue {
+		.v-calendar-event-content {
+			background-color: #CCE1FF !important;
+		}
+	}
+	.v-calendar-event-blue.v-calendar-event-month {
+		background-color: #CCE1FF !important;
+	}
+	
+	.v-calendar-event-grey-all-day {
+		background-color: #E0E0E0 !important;
+		/*height: 60px !important;
+		white-space:normal;*/
+	}
+	.v-calendar-event-grey {
+		.v-calendar-event-content {
+			background-color: #E0E0E0 !important;
+		}
+	}
+	.v-calendar-event-grey.v-calendar-event-month {
+		background-color: #E0E0E0 !important;
+	}
+	
+	.v-calendar-event-yellow-all-day {
+		background-color: #FFFFE0 !important;
+		/*height: 60px !important;
+		white-space:normal;*/
+	}
+	.v-calendar-event-yellow {
+		.v-calendar-event-content {
+			background-color: #FFFFE0 !important;
+		}
+	}
+	.v-calendar-event-yellow.v-calendar-event-month {
+		background-color: #FFFFE0 !important;
+	}
+	
+	.v-calendar-event-green-all-day {
+		background-color: #DBFFE4 !important;
+		/*height: 60px !important;
+		white-space:normal;*/
+	}
+	.v-calendar-event-green.v-calendar-event-month {
+		background-color: #DBFFE4 !important;
+	}
+	.v-calendar-event-green {
+		.v-calendar-event-content {
+			background-color: #DBFFE4 !important;
+		}
+	}
+	
+	.v-calendar-event-red-all-day {
+		background-color: #FFE0E0 !important;
+		/*height: 60px !important;
+		white-space:normal;*/
+	}
+	.v-calendar-event-red {
+		.v-calendar-event-content {
+			background-color: #FFE0E0 !important;
+		}
+	}
+	.v-calendar-event-red.v-calendar-event-month {
+		background-color: #FFE0E0 !important;
+	}
+	
+	/*MENU BAR*/
+	/*
+	.v-menubar-menuitem-friendly {
+		@include v-menubar-menuitem;
+		color: $v-friendly-color !important;
+	}
+	
+	.v-menubar-menuitem-danger {
+		@include v-menubar-menuitem;
+		color: $v-error-indicator-color !important;
+	}
+	*/
+	/*.v-menubar-menuitem {
+		.v-menubar-menuitem-friendly {
+			color: $v-friendly-color !important;
+		}
+		.v-menubar-menuitem-danger {
+			color: $v-error-indicator-color !important;
+		}
+	}*/
+	
+	/*ACCORDION*/
+	.v-accordion-colored {
+	
+		background-color: #3c3c3c;
+		background-image: -webkit-linear-gradient(top,#3c3c3c 0%, #4b4b4b 98%);
+		background-image: linear-gradient(to bottom,#3c3c3c 0%, #4b4b4b 98%);
+	
+ 		.v-accordion-item,
+		.v-accordion-item-open,
+		.v-accordion-item-first {
+			.v-accordion-item-caption {
+				.v-caption {
+					color: #a9a9a9;
+					box-shadow: inset 0 1px 0 #808080;
+					text-shadow: 0 2px 0 rgba(0, 0, 0, 0.0);
+				}
+			}
+			/*.v-accordion-item-content {
+				.v-scollable {}
+			}*/
+		}
+		
+	}
+	
+	/*TABSHEET*/
+	.v-tabsheet-tabitemcell-prime {
+		.v-tabsheet-tabcontainer {
+			border: 0px !important; /*1px solid #3c3c3c !important;     0px !important;*/
+			background: #3c3c3c !important;
+		}
+		.v-tabsheet-content {
+			border: 0px !important;
+		}
+   }
+   
+   .v-tabsheet-tabitemcell-second {
+		.v-tabsheet-tabcontainer {
+			border: 0px !important; /*1px solid #dfdfdf !important*/
+			background: #808080 !important; /*#fafafa*/
+		}
+		.v-tabsheet-content {
+			border: 0px !important;
+		}
+   }
+	
+	/*MENU*/
+	.valo-menu {
+		border-right: none; 
+		.badgewrapper { 
+			position : relative;
+			padding: 0 !important;
+		}
+	}
+	.valo-menu-part { 
+		overflow: visible !important;
+		padding-bottom: 57px;
+	}
+	.valo-menuitems { 
+		overflow-y: auto !important;
+		overflow-x: hidden !important;
+		height: 100% !important;
+		/*overflow: visible !important;*/
+	}
+	
+	.v-ui[width-range~="0-800px"] .valo-menuitems {
+		height: auto !important;
+	}
+	
+	.v-ui.valo-menu-responsive[width-range~="0-"] .valo-menu-title {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 30px !important;
+		padding-top: 0;
+		padding-bottom: 0;
+		-webkit-backface-visibility: hidden;
+	}
+	
+	.v-ui.valo-menu-responsive[width-range~="0-"] {
+		padding-top: 30px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.v-ui.valo-menu-responsive[width-range~="0-"] .v-loading-indicator {
+		top: 30px;
+	}
+	
+	.v-ui.valo-menu-responsive[width-range~="0-"]  > .v-widget {
+		position: relative !important;
+	}
+	
+	/* FLEX WRAP */
+	.flexwrap2 .flexwrap3 .flexwrap4 {
+		/*
+		.title {
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 30px;
+			padding: 5px;
+		}*/
+    
+		.itembox {
+			white-space: normal;
+			vertical-align: top;
+		}
+    	/*
+		.itembox.v-label {
+			padding: 5px
+		}*/
+	}
+    
+    /*FLEX2*/
+    .flexwrap2[width-range~="0-999px"] {
+		.itembox {width: 100% !important}
+	}
+    
+	.flexwrap2[width-range~="1000px-"] {
+		.itembox {width: 50% !important}
+	}
+    
+    /*FLEX 3*/
+	.flexwrap3[width-range~="0-499px"] {
+		.itembox {width: 100% !important}
+	}
+    
+	.flexwrap3[width-range~="500px-999px"] {
+		.itembox {width: 50% !important}
+	}
+	
+	.flexwrap3[width-range~="1000px-"] {
+		.itembox {width: 33.333% !important}
+	}
+	
+	/*FLEX 4*/
+	.flexwrap4[width-range~="0-299px"] {
+		.itembox {width: 100% !important}
+	}
+    
+	.flexwrap4[width-range~="300px-599"] {
+		.itembox {width: 50% !important}
+	}
+	
+	.flexwrap4[width-range~="600px-999px"] {
+		.itembox {width: 33.333% !important}
+	}
+	
+	.flexwrap4[width-range~="1000px-"] {
+		.itembox {width: 25% !important}
+	}
+	
+	/*FLEX HEIGHT 2*/
+	.flexheight2 {
+		.itembox {height: 100% !important;}
+	}
+	.flexheight2[width-range~="0-999px"] {
+		.itembox {height: 350px !important;}
+	}
+	.flexheight2[width-range~="1000px-"] {
+		.itembox {height: 100% !important;}
+	}
+
+}

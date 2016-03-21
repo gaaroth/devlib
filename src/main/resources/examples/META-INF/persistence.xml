@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	
+	<persistence-unit name="persistence" transaction-type="JTA">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<jta-data-source>java:/webappcrm</jta-data-source>
+		<non-jta-data-source>java:/webappcrm</non-jta-data-source>
+		
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AnagraficaAttivitaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AnagraficaCategoriaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AnagraficaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AnagraficaIndirizzoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AreaOrganizzativaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AttivitaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.AttivitaUtenteEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.CategoriaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.ConfigEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.ContattoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.CronEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.EmailEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.GruppoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.GruppoPermessoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoCategoryEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoCategoryImporterEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductCategoryEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductImporterEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductInventoryStockItemUpdateEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductMediaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.MagentoProductTierPriceEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.PermessoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.StatoAttivitaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.TipoAttivitaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.UtenteEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.UtenteGruppoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.UtentePermessoEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.base.UtenteTipoEntity</class>
+		
+		<properties>
+			<!-- Hibernate properties -->
+			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />-->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="validate"/> -->
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.enable_lazy_load_no_trans" value="true" />
+			
+			<!-- Configuring JDBC properties  -->
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/intranet" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.username" value="webapp" />
+			<property name="hibernate.connection.password" value="webapp1505" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+
+			<!-- Configuring Connection Pool  -->
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="500" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="2000" />
+		
+			<!-- Eclipselink -->
+			<property name="eclipselink.target-database" value="MySQL"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/intranet" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="webapp" />
+			<property name="javax.persistence.jdbc.password" value="webapp1505" /> 
+			<property name="eclipselink.logging.level" value="FINE" />
+		
+		</properties>
+		
+	</persistence-unit>
+	
+	<persistence-unit name="persistence_metodo" transaction-type="JTA">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<jta-data-source>java:/srvmetodo</jta-data-source>
+		<non-jta-data-source>java:/srvmetodo</non-jta-data-source>
+		
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.AnagraficaagentiEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.AnagraficacfEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.AnagraficariservaticfEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.AnagraficariservaticfEntityKey</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.DestinazionidiverseEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.DestinazionidiverseEntityKey</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.ExtraclientiEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.TabellapersonaleEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.TabellapersonaleEntityKey</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.metodo.TabruoliEntity</class>
+		
+		<properties>
+			<!-- Hibernate properties -->
+			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="validate"/> -->
+			<!-- <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" /> -->
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.enable_lazy_load_no_trans" value="true" />
+			
+			<!-- Configuring JDBC properties  -->
+			<property name="hibernate.connection.url" value="jdbc:sqlserver://192.168.2.16;databaseName=CREMONAUFFICIO_N" />
+			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="canonxl1s" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+
+			<!-- Configuring Connection Pool  -->
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="500" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="2000" />
+			
+			<!-- Eclipselink -->
+			<property name="eclipselink.target-database" value="SQLServer"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://SRV-METODO;databaseName=CREMONAUFFICIO_N" />
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="canonxl1s" /> 
+			<property name="eclipselink.logging.level" value="FINE" />
+		
+		</properties>
+		
+	</persistence-unit>
+	
+	<persistence-unit name="persistence_arxivar" transaction-type="JTA">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<jta-data-source>java:/srvarxivar</jta-data-source>
+		<non-jta-data-source>java:/srvarxivar</non-jta-data-source>
+		
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmRubricaEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmContattiEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmCatrubricheEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmProfileEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmAooEntity</class>
+		<class>com.cremonaufficio.intranet.backend.database.model.arxivar.DmTipidocumentoEntity</class>
+		
+		<properties>
+			<!-- Hibernate properties -->
+			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="validate"/> -->
+			<!-- <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" /> -->
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.enable_lazy_load_no_trans" value="true" />
+			
+			<!-- Configuring JDBC properties  -->
+			<property name="hibernate.connection.url" value="jdbc:sqlserver://192.168.2.18;databaseName=ARCHDB" />
+			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="canonxl1s" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+
+			<!-- Configuring Connection Pool  -->
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="500" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="2000" />
+			
+			<!-- Eclipselink -->
+			<property name="eclipselink.target-database" value="SQLServer"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://192.168.2.18;databaseName=ARCHDB" />
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="canonxl1s" /> 
+			<property name="eclipselink.logging.level" value="FINE" />
+		
+		</properties>
+		
+	</persistence-unit>
+	
+</persistence>

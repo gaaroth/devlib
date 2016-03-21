@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+        
+    <!-- <context:component-scan base-package="com.cremonaufficio.crm.core.arxivar" /> -->
+
+	<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+        <property name="soapVersion">
+            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12"/>
+        </property>
+    </bean>
+
+	<bean id="marshallerLogin" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath"
+			value="com.cremonaufficio.intranet.backend.controller.arxivar.classes.login" />
+	</bean>
+	<bean id="marshallerDocumenti" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath"
+			value="com.cremonaufficio.intranet.backend.controller.arxivar.classes.documenti" />
+	</bean>
+	<bean id="marshallerDati" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath"
+			value="com.cremonaufficio.intranet.backend.controller.arxivar.classes.dati" />
+	</bean>
+	<bean id="marshallerSearch" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath"
+			value="com.cremonaufficio.intranet.backend.controller.arxivar.classes.search" />
+	</bean>
+
+	<bean id="webServiceTemplateLogin" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<constructor-arg ref="messageFactory" />
+		<property name="marshaller" ref="marshallerLogin"></property>
+		<property name="unmarshaller" ref="marshallerLogin"></property>
+		<property name="messageSender">
+			<bean class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+				<property name="connectionTimeout" value="60000" />
+				<property name="readTimeout" value="60000" />
+			</bean>
+		</property>
+		<property name="defaultUri" value="http://192.168.2.18/arxivarws/arx_login.asmx" />
+		<!-- <property name="defaultUri" value="http://192.168.2.129/arxivarws/arx_login.asmx" /> -->
+	</bean>
+	<bean id="webServiceTemplateDocumenti" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<constructor-arg ref="messageFactory" />
+		<property name="marshaller" ref="marshallerDocumenti"></property>
+		<property name="unmarshaller" ref="marshallerDocumenti"></property>
+		<property name="messageSender">
+			<bean class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+				<property name="connectionTimeout" value="60000" />
+				<property name="readTimeout" value="60000" />
+			</bean>
+		</property>
+		<property name="defaultUri" value="http://192.168.2.18/arxivarws/arx_documenti.asmx" />
+		<!-- <property name="defaultUri" value="http://192.168.2.129/arxivarws/arx_documenti.asmx" /> -->
+	</bean>
+	<bean id="webServiceTemplateDati" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<constructor-arg ref="messageFactory" />
+		<property name="marshaller" ref="marshallerDati"></property>
+		<property name="unmarshaller" ref="marshallerDati"></property>
+		<property name="messageSender">
+			<bean class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+				<property name="connectionTimeout" value="60000" />
+				<property name="readTimeout" value="60000" />
+			</bean>
+		</property>
+		<property name="defaultUri" value="http://192.168.2.18/arxivarws/arx_dati.asmx" />
+		<!-- <property name="defaultUri" value="http://192.168.2.129/arxivarws/arx_dati.asmx" /> -->
+	</bean>
+	<bean id="webServiceTemplateSearch" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<constructor-arg ref="messageFactory" />
+		<property name="marshaller" ref="marshallerSearch"></property>
+		<property name="unmarshaller" ref="marshallerSearch"></property>
+		<property name="messageSender">
+			<bean class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+				<property name="connectionTimeout" value="60000" />
+				<property name="readTimeout" value="60000" />
+			</bean>
+		</property>
+		<property name="defaultUri" value="http://192.168.2.18/arxivarws/arx_search.asmx" />
+		<!-- <property name="defaultUri" value="http://192.168.2.129/arxivarws/arx_dati.asmx" /> -->
+	</bean>
+
+</beans>
