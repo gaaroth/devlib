@@ -12,18 +12,18 @@ public class EncriptFile {
 		if (!file.exists()) {
 			file.createNewFile();
 		}
-		EncryptedProperties ep = new EncryptedProperties("cruff");
+		EncryptedProperties ep = new EncryptedProperties("passphrase");
 		
 		FileInputStream in = new FileInputStream(file);
 		ep.load(in);
 		
 		ep.setProperty("jdbcDriver", "com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		ep.setProperty("databaseType", "sqlserver");
-		ep.setProperty("uri", "srv-dotnet\\sqlexpress");
+		ep.setProperty("uri", "uri\\db");
 		ep.setProperty("port", "");
-		ep.setProperty("databaseName", "magentosync");
-		ep.setProperty("username", "sa");
-		ep.setProperty("password", "Admin000");
+		ep.setProperty("databaseName", "dbname");
+		ep.setProperty("username", "user");
+		ep.setProperty("password", "pass");
 		
 		FileOutputStream out = new FileOutputStream(file);
 		ep.store(out, "Encrypted database properties file");
